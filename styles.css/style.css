@@ -16,6 +16,34 @@ main{
 
 /* NAVIGATION BAR */
 
+.navmenu li{
+    list-style: none;
+}
+.navmenu{
+    display: flex;
+    gap: 36px;
+    color: #F3F1FF;
+    align-items: center;
+}
+
+.navmenu li a{
+    text-decoration: none;
+    color: #F3F1FF;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logopng{
+    width: 40px;
+    height: 50px;
+}
+#logo-text{
+    font-family: 'Poppins', sans-serif;
+    color: #F3F1FF;
+    font-weight: 500;
+}
+
 nav{
     height: 94px;
     background-color: #562EFF;
@@ -23,6 +51,10 @@ nav{
 
 .navcontainer {
     width: 870px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .section-title{
@@ -157,15 +189,25 @@ hr{
 /* MOBILE DEVICE */
 
 @media only screen and (max-width: 688px) {
-    .container {
+    .container, .navcontainer {
         width: 100%;
     }
 
+    .navcontainer{
+        justify-content: center;
+    }
+    .navmenu{
+        flex-direction: column;
+        
+    }
+    nav{
+        height: auto;
+    }
     .players, .blogs, .courses {
         grid-template-columns: repeat(1, 1fr);
         /* justify-content: center; */
     }
-    .player, .blog, course{
+    .player, .blog, .course{
         flex-direction: column;
         justify-content: center;
     }
@@ -174,11 +216,10 @@ hr{
 /* TABLET DEVICES */
 
 @media only screen and (min-width: 688px) and (max-width: 992px) {
-    .container{
+    .container, .navcontainer{
         width: 100%;
     }
     .players, .courses{
         grid-template-columns: repeat(2, 1fr);
-
     }    
 }
